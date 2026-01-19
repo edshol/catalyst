@@ -1,0 +1,49 @@
+{
+  "templates": [
+    {
+      "name": "homepage",
+      "urls": [
+        "https://www.wknd-trendsetters.site/"
+      ],
+      "description": "Fashion Blog homepage template with hero, features, articles, tabs, FAQ, and CTA sections",
+      "blocks": [
+        {
+          "name": "columns-hero-images",
+          "instances": [
+            ".hero-images-section .two-image-grid"
+          ]
+        },
+        {
+          "name": "cards-features",
+          "instances": [
+            ".features-section .card-grid"
+          ]
+        },
+        {
+          "name": "cards-articles",
+          "instances": [
+            ".articles-section .article-cards"
+          ]
+        },
+        {
+          "name": "tabs-showcase",
+          "instances": [
+            ".showcase-section .tabs-container"
+          ]
+        },
+        {
+          "name": "accordion-faq",
+          "instances": [
+            ".faq-section .accordion-list"
+          ]
+        },
+        {
+          "name": "columns",
+          "instances": [
+            ".cta-section .two-column-layout"
+          ]
+        }
+      ]
+    }
+  ]
+}
