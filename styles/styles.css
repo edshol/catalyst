@@ -1,74 +1,122 @@
 /*
- * Copyright 2020 Adobe. All rights reserved.
- * This file is licensed to you under the Apache License, Version 2.0 (the "License");
- * you may not use this file except in compliance with the License. You may obtain a copy
- * of the License at http://www.apache.org/licenses/LICENSE-2.0
- *
- * Unless required by applicable law or agreed to in writing, software distributed under
- * the License is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR REPRESENTATIONS
- * OF ANY KIND, either express or implied. See the License for the specific language
- * governing permissions and limitations under the License.
+ * WKND Trendsetters Design System
+ * Migrated from https://www.wknd-trendsetters.site/
  */
 
 :root {
-  /* colors */
-  --background-color: white;
-  --light-color: #f8f8f8;
-  --dark-color: #505050;
-  --text-color: #131313;
-  --link-color: #3b63fb;
-  --link-hover-color: #1d3ecf;
+  /* ===========================================
+     COLORS
+     =========================================== */
+  --background-color: #fff;
+  --light-color: #f7f8f5;
+  --dark-color: #000;
+  --text-color: #000;
+  --text-color-inverted: #fff;
+  --text-color-muted: rgba(255, 255, 255, 0.7);
 
-  /* fonts */
-  --body-font-family: roboto, roboto-fallback, sans-serif;
-  --heading-font-family: roboto-condensed, roboto-condensed-fallback, sans-serif;
+  /* Accent/Brand Colors */
+  --accent-color: rgba(244, 254, 139, 0.5);
+  --accent-color-light: rgba(244, 254, 139, 0.1);
+  --tag-background: rgba(0, 0, 0, 0.1);
 
-  /* body sizes */
-  --body-font-size-m: 22px;
-  --body-font-size-s: 19px;
-  --body-font-size-xs: 17px;
+  /* Link Colors */
+  --link-color: #000;
+  --link-hover-color: #000;
 
-  /* heading sizes */
-  --heading-font-size-xxl: 55px;
-  --heading-font-size-xl: 44px;
-  --heading-font-size-l: 34px;
-  --heading-font-size-m: 27px;
-  --heading-font-size-s: 24px;
-  --heading-font-size-xs: 22px;
+  /* ===========================================
+     FONTS
+     =========================================== */
+  --body-font-family: "Instrument Sans", instrument-sans-fallback, sans-serif;
+  --heading-font-family: Syncopate, syncopate-fallback, sans-serif;
 
-  /* nav height */
+  /* Body Font Sizes */
+  --body-font-size-xl: 18px;
+  --body-font-size-l: 16px;
+  --body-font-size-m: 14px;
+  --body-font-size-s: 12px;
+  --body-font-size-xs: 10px;
+
+  /* Heading Font Sizes - Mobile First */
+  --heading-font-size-xxl: 48px;
+  --heading-font-size-xl: 32px;
+  --heading-font-size-l: 24px;
+  --heading-font-size-m: 20px;
+  --heading-font-size-s: 18px;
+  --heading-font-size-xs: 16px;
+
+  /* Typography Details */
+  --heading-letter-spacing: -0.01em;
+  --heading-line-height: 1.04;
+  --body-line-height: 1.6;
+
+  /* ===========================================
+     SPACING
+     =========================================== */
+  --spacing-xxs: 4px;
+  --spacing-xs: 8px;
+  --spacing-s: 16px;
+  --spacing-m: 24px;
+  --spacing-l: 32px;
+  --spacing-xl: 48px;
+  --spacing-xxl: 80px;
+  --spacing-section: 112px;
+
+  /* ===========================================
+     LAYOUT
+     =========================================== */
   --nav-height: 64px;
+  --container-max-width: 1280px;
+  --container-padding: 16px;
+
+  /* ===========================================
+     BUTTONS
+     =========================================== */
+  --button-padding: 16px 24px;
+  --button-border-radius: 1600px;
+  --button-font-size: 16px;
+  --button-font-weight: 400;
+  --button-box-shadow: rgb(0, 0, 0) 0px 0px 0px 2px inset, var(--accent-color) 4px 4px 0px 0px;
+  --button-box-shadow-hover: rgb(0, 0, 0) 0px 0px 0px 2px inset, var(--accent-color) 7px 7px 0px 0px;
+  --button-transition: border-color 0.2s, color 0.2s, background-color 0.2s cubic-bezier(0.165, 0.84, 0.44, 1), box-shadow 0.2s;
+
+  /* ===========================================
+     BORDERS & SHADOWS
+     =========================================== */
+  --border-radius-pill: 1600px;
+  --border-radius-m: 8px;
+  --border-radius-s: 4px;
 }
 
-/* fallback fonts */
+/* Fallback fonts for font loading optimization */
 @font-face {
-  font-family: roboto-condensed-fallback;
-  size-adjust: 88.82%;
+  font-family: instrument-sans-fallback;
+  size-adjust: 100%;
   src: local('Arial');
 }
 
 @font-face {
-  font-family: roboto-fallback;
-  size-adjust: 99.529%;
-  src: local('Arial');
+  font-family: syncopate-fallback;
+  size-adjust: 95%;
+  src: local('Arial Narrow'), local('Helvetica Condensed'), local('Arial');
 }
 
+/* Desktop breakpoint - larger typography */
 @media (width >= 900px) {
   :root {
-    /* body sizes */
-    --body-font-size-m: 18px;
-    --body-font-size-s: 16px;
-    --body-font-size-xs: 14px;
-
-    /* heading sizes */
-    --heading-font-size-xxl: 45px;
+    --heading-font-size-xxl: 72px;
     --heading-font-size-xl: 36px;
     --heading-font-size-l: 28px;
     --heading-font-size-m: 22px;
     --heading-font-size-s: 20px;
     --heading-font-size-xs: 18px;
+
+    --container-padding: 32px;
   }
 }
+
+/* ===========================================
+   BASE STYLES
+   =========================================== */
 
 body {
   display: none;
@@ -77,12 +125,16 @@ body {
   color: var(--text-color);
   font-family: var(--body-font-family);
   font-size: var(--body-font-size-m);
-  line-height: 1.6;
+  line-height: var(--body-line-height);
 }
 
 body.appear {
   display: block;
 }
+
+/* ===========================================
+   HEADER & FOOTER VISIBILITY
+   =========================================== */
 
 header {
   height: var(--nav-height);
@@ -98,26 +150,50 @@ footer .footer[data-block-status="loaded"] {
   visibility: visible;
 }
 
+/* ===========================================
+   TYPOGRAPHY
+   =========================================== */
+
 h1,
 h2,
 h3,
 h4,
 h5,
 h6 {
-  margin-top: 0.8em;
-  margin-bottom: 0.25em;
+  margin-top: 0;
+  margin-bottom: 0.5em;
   font-family: var(--heading-font-family);
-  font-weight: 600;
-  line-height: 1.25;
+  font-weight: 400;
+  line-height: var(--heading-line-height);
+  letter-spacing: var(--heading-letter-spacing);
   scroll-margin: 40px;
 }
 
-h1 { font-size: var(--heading-font-size-xxl); }
-h2 { font-size: var(--heading-font-size-xl); }
-h3 { font-size: var(--heading-font-size-l); }
-h4 { font-size: var(--heading-font-size-m); }
-h5 { font-size: var(--heading-font-size-s); }
-h6 { font-size: var(--heading-font-size-xs); }
+h1 {
+  font-size: var(--heading-font-size-xxl);
+  margin-bottom: 0.3em;
+}
+
+h2 {
+  font-size: var(--heading-font-size-xl);
+}
+
+h3 {
+  font-size: var(--heading-font-size-l);
+  line-height: 1.3;
+}
+
+h4 {
+  font-size: var(--heading-font-size-m);
+}
+
+h5 {
+  font-size: var(--heading-font-size-s);
+}
+
+h6 {
+  font-size: var(--heading-font-size-xs);
+}
 
 p,
 dl,
@@ -125,8 +201,8 @@ ol,
 ul,
 pre,
 blockquote {
-  margin-top: 0.8em;
-  margin-bottom: 0.25em;
+  margin-top: 0;
+  margin-bottom: 0.7em;
 }
 
 code,
@@ -136,24 +212,16 @@ pre {
 
 pre {
   padding: 16px;
-  border-radius: 8px;
+  border-radius: var(--border-radius-m);
   background-color: var(--light-color);
   overflow-x: auto;
   white-space: pre;
 }
 
-main > div {
-  margin: 40px 16px;
-}
+/* ===========================================
+   LINKS
+   =========================================== */
 
-input,
-textarea,
-select,
-button {
-  font: inherit;
-}
-
-/* links */
 a:any-link {
   color: var(--link-color);
   text-decoration: none;
@@ -165,50 +233,78 @@ a:hover {
   text-decoration: underline;
 }
 
-/* buttons */
+/* ===========================================
+   BUTTONS
+   =========================================== */
+
 a.button:any-link,
 button {
   box-sizing: border-box;
-  display: inline-block;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--spacing-xs);
   max-width: 100%;
-  margin: 12px 0;
-  border: 2px solid transparent;
-  border-radius: 2.4em;
-  padding: 0.5em 1.2em;
+  margin: 8px 0;
+  border: none;
+  border-radius: var(--button-border-radius);
+  padding: var(--button-padding);
   font-family: var(--body-font-family);
-  font-style: normal;
-  font-weight: 500;
+  font-size: var(--button-font-size);
+  font-weight: var(--button-font-weight);
   line-height: 1.25;
   text-align: center;
   text-decoration: none;
-  background-color: var(--link-color);
-  color: var(--background-color);
+  background-color: transparent;
+  color: var(--text-color);
+  box-shadow: var(--button-box-shadow);
   cursor: pointer;
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
+  transition: var(--button-transition);
 }
 
 a.button:hover,
 a.button:focus,
 button:hover,
 button:focus {
-  background-color: var(--link-hover-color);
+  background-color: var(--accent-color-light);
+  box-shadow: var(--button-box-shadow-hover);
   cursor: pointer;
+}
+
+a.button:focus,
+button:focus {
+  outline: 2px solid var(--text-color);
+  outline-offset: 2px;
 }
 
 button:disabled,
 button:disabled:hover {
   background-color: var(--light-color);
-  cursor: unset;
+  box-shadow: none;
+  cursor: not-allowed;
+  opacity: 0.6;
 }
 
+/* Secondary button variant */
 a.button.secondary,
 button.secondary {
-  background-color: unset;
-  border: 2px solid currentcolor;
+  background-color: transparent;
+  box-shadow: rgb(0, 0, 0) 0px 0px 0px 1px inset;
   color: var(--text-color);
 }
+
+a.button.secondary:hover,
+button.secondary:hover {
+  background-color: var(--accent-color-light);
+  box-shadow: rgb(0, 0, 0) 0px 0px 0px 1px inset, var(--accent-color) 4px 4px 0px 0px;
+}
+
+/* ===========================================
+   IMAGES
+   =========================================== */
 
 main img {
   max-width: 100%;
@@ -227,31 +323,99 @@ main img {
   width: 100%;
 }
 
-/* sections */
+/* ===========================================
+   FORM ELEMENTS
+   =========================================== */
+
+input,
+textarea,
+select,
+button {
+  font: inherit;
+}
+
+/* ===========================================
+   LAYOUT - SECTIONS
+   =========================================== */
+
+main > div {
+  margin: var(--spacing-l) var(--container-padding);
+}
+
 main > .section {
-  margin: 40px 0;
+  margin: 0;
+  padding: var(--spacing-section) 0;
 }
 
 main > .section > div {
-  max-width: 1200px;
+  max-width: var(--container-max-width);
   margin: auto;
-  padding: 0 24px;
+  padding: 0 var(--container-padding);
 }
 
 main > .section:first-of-type {
-  margin-top: 0;
+  padding-top: var(--spacing-xl);
 }
 
 @media (width >= 900px) {
   main > .section > div {
-    padding: 0 32px;
+    padding: 0 var(--spacing-l);
   }
 }
 
-/* section metadata */
+/* ===========================================
+   SECTION VARIANTS
+   =========================================== */
+
+/* Light/Highlight section - off-white/cream background */
 main .section.light,
 main .section.highlight {
   background-color: var(--light-color);
-  margin: 0;
-  padding: 40px 0;
+}
+
+/* Dark section - black background with white text */
+main .section.dark {
+  background-color: var(--dark-color);
+  color: var(--text-color-inverted);
+}
+
+main .section.dark h1,
+main .section.dark h2,
+main .section.dark h3,
+main .section.dark h4,
+main .section.dark h5,
+main .section.dark h6 {
+  color: var(--text-color-inverted);
+}
+
+main .section.dark p {
+  color: var(--text-color-muted);
+}
+
+main .section.dark a:any-link {
+  color: var(--text-color-inverted);
+}
+
+main .section.dark a.button:any-link,
+main .section.dark button {
+  color: var(--text-color-inverted);
+  box-shadow: rgb(255, 255, 255) 0px 0px 0px 2px inset, var(--accent-color) 4px 4px 0px 0px;
+}
+
+main .section.dark a.button:hover,
+main .section.dark button:hover {
+  box-shadow: rgb(255, 255, 255) 0px 0px 0px 2px inset, var(--accent-color) 7px 7px 0px 0px;
+}
+
+/* ===========================================
+   TAGS/PILLS
+   =========================================== */
+
+.tag {
+  display: inline-block;
+  padding: 2px 9px;
+  background-color: var(--tag-background);
+  border-radius: var(--border-radius-pill);
+  font-size: var(--body-font-size-s);
+  font-weight: 400;
 }
