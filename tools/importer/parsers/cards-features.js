@@ -1,62 +1,46 @@
 /* eslint-disable */
 /* global WebImporter */
-
 /**
- * Parser for cards-features block
- *
- * Source: https://www.wknd-trendsetters.site/
- * Base Block: cards
- *
- * Block Structure:
- * - Row per card: Single column with text (no images, icon-based features)
- *
- * Source HTML Pattern:
- * <div class="w-layout-grid grid-layout desktop-4-column ...">
- *   <div class="flex-horizontal flex-gap-xxs ...">
- *     <div><div class="icon"><img src="..."></div></div>
- *     <p class="utility-margin-bottom-0">Feature text...</p>
- *   </div>
- *   <!-- Repeats for each feature -->
- * </div>
- *
- * Generated: 2026-01-19
+ * Parser for cards-features. Base: cards.
+ * Source: https://www.jp-life.japanpost.jp/
+ * Selectors: .box__bgimage__001 .feature__slick .slick-slide
+ * Target: 2-column cards - image | text (title + description)
+ * Generated: 2026-03-23
  */
 export default function parse(element, { document }) {
-  // Extract feature items from the grid
-  // Source HTML uses .flex-horizontal.flex-gap-xxs divs for each feature
-  const featureItems = element.querySelectorAll('.flex-horizontal.flex-gap-xxs');
-
-  // Build cells array - one row per feature card
+  const slides = Array.from(element.querySelectorAll('.slick-slide:not(.slick-cloned)'));
   const cells = [];
+  const seen = new Set();
 
-  featureItems.forEach(item => {
-    // Extract the text content (paragraph)
-    const textContent = item.querySelector('p, .utility-margin-bottom-0');
+  slides.forEach((slide) => {
+    const img = slide.querySelector('img');
+    if (!img) return;
+    const src = img.getAttribute('src');
+    if (seen.has(src)) return;
+    seen.add(src);
 
-    if (textContent) {
-      // Create cell with feature text
-      const cell = document.createElement('div');
-      cell.textContent = textContent.textContent.trim();
-      cells.push([cell]);
+    const titleEl = slide.querySelector('.feature__title, h3, h2, [class*="title"]');
+    const descEl = slide.querySelector('.feature__text, p, [class*="text"]');
+
+    const contentCell = [];
+    if (titleEl) {
+      const h3 = document.createElement('h3');
+      h3.textContent = titleEl.textContent.trim();
+      contentCell.push(h3);
+    }
+    if (descEl && descEl !== titleEl) {
+      const p = document.createElement('p');
+      p.textContent = descEl.textContent.trim();
+      contentCell.push(p);
+    }
+
+    if (contentCell.length > 0) {
+      cells.push([img, contentCell]);
+    } else {
+      cells.push([img]);
     }
   });
 
-  // If no items found with specific selector, try alternative
-  if (cells.length === 0) {
-    const gridItems = element.querySelectorAll(':scope > div[class*="flex"]');
-    gridItems.forEach(item => {
-      const text = item.querySelector('p');
-      if (text) {
-        const cell = document.createElement('div');
-        cell.textContent = text.textContent.trim();
-        cells.push([cell]);
-      }
-    });
-  }
-
-  // Create block using WebImporter utility
-  const block = WebImporter.Blocks.createBlock(document, { name: 'Cards-Features', cells });
-
-  // Replace original element with structured block table
+  const block = WebImporter.Blocks.createBlock(document, { name: 'cards-features', cells });
   element.replaceWith(block);
 }

@@ -1,0 +1,38 @@
+{
+  "variantName": "carousel-hero",
+  "baseBlock": "carousel",
+  "version": "1.0.0",
+  "created": "2026-03-23T08:10:00.000Z",
+  "sourceContext": {
+    "originUrl": "https://www.jp-life.japanpost.jp/",
+    "originPage": "Japan Post Life Insurance homepage",
+    "blockPosition": "top"
+  },
+  "visualCharacteristics": {
+    "colorScheme": "light",
+    "density": "spacious",
+    "purpose": "hero-banner",
+    "imagePattern": "large-images"
+  },
+  "contentPattern": {
+    "structure": "linked banner images in rotation",
+    "buttonCount": 0,
+    "imageCount": 6
+  },
+  "reuseGuidance": {
+    "suitableFor": [
+      "homepage hero banners",
+      "promotional image carousels",
+      "campaign banner rotations"
+    ],
+    "notSuitableFor": [
+      "text-heavy content sliders",
+      "product detail carousels"
+    ]
+  },
+  "usage": {
+    "pagesUsing": ["content/index"],
+    "reuseCount": 1,
+    "lastUsed": "2026-03-23T08:10:00.000Z"
+  }
+}

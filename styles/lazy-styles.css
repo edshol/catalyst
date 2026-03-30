@@ -1,1 +1,287 @@
-/* add global styles that can be loaded post LCP here */
+/* ===========================================
+   rerdade futebolista - Lazy-Loaded Styles
+   Loaded after LCP for non-critical visual enhancements
+   =========================================== */
+
+/* ===========================================
+   SMOOTH SCROLLING
+   =========================================== */
+
+html {
+  scroll-behavior: smooth;
+}
+
+/* ===========================================
+   SCROLL ANIMATIONS (replaces WOW.js + Animate.css)
+   =========================================== */
+
+@keyframes slideInUp {
+  from {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes flipInX {
+  from {
+    transform: perspective(400px) rotateX(90deg);
+    opacity: 0;
+  }
+
+  40% {
+    transform: perspective(400px) rotateX(-20deg);
+  }
+
+  60% {
+    transform: perspective(400px) rotateX(10deg);
+    opacity: 1;
+  }
+
+  80% {
+    transform: perspective(400px) rotateX(-5deg);
+  }
+
+  to {
+    transform: perspective(400px);
+    opacity: 1;
+  }
+}
+
+/* Elements waiting for scroll reveal
+ * Only hide when JS animations are ready (body.scroll-animations)
+ * This prevents content from being invisible before delayed.js loads
+ */
+body.scroll-animations .section .animate-on-scroll {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: none;
+}
+
+/* Revealed state */
+body.scroll-animations .section .animate-on-scroll.revealed {
+  animation: slideInUp 0.6s ease-out forwards;
+}
+
+/* Stagger children */
+body.scroll-animations .section .animate-on-scroll.revealed:nth-child(2) {
+  animation-delay: 0.15s;
+}
+
+body.scroll-animations .section .animate-on-scroll.revealed:nth-child(3) {
+  animation-delay: 0.3s;
+}
+
+/* Cards items staggered reveal */
+body.scroll-animations .cards > ul > li {
+  opacity: 0;
+  transform: translateY(30px);
+}
+
+body.scroll-animations .cards.revealed > ul > li {
+  animation: slideInUp 0.5s ease-out forwards;
+}
+
+body.scroll-animations .cards.revealed > ul > li:nth-child(1) { animation-delay: 0s; }
+body.scroll-animations .cards.revealed > ul > li:nth-child(2) { animation-delay: 0.1s; }
+body.scroll-animations .cards.revealed > ul > li:nth-child(3) { animation-delay: 0.2s; }
+body.scroll-animations .cards.revealed > ul > li:nth-child(4) { animation-delay: 0.3s; }
+body.scroll-animations .cards.revealed > ul > li:nth-child(5) { animation-delay: 0.4s; }
+body.scroll-animations .cards.revealed > ul > li:nth-child(6) { animation-delay: 0.5s; }
+body.scroll-animations .cards.revealed > ul > li:nth-child(7) { animation-delay: 0.6s; }
+body.scroll-animations .cards.revealed > ul > li:nth-child(8) { animation-delay: 0.7s; }
+body.scroll-animations .cards.revealed > ul > li:nth-child(9) { animation-delay: 0.8s; }
+body.scroll-animations .cards.revealed > ul > li:nth-child(10) { animation-delay: 0.9s; }
+body.scroll-animations .cards.revealed > ul > li:nth-child(11) { animation-delay: 1s; }
+body.scroll-animations .cards.revealed > ul > li:nth-child(12) { animation-delay: 1.1s; }
+
+/* ===========================================
+   BACK-TO-TOP BUTTON
+   =========================================== */
+
+.back-to-top {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  z-index: 999;
+  width: 44px;
+  height: 44px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--accent-primary);
+  color: var(--text-color-inverted);
+  border-radius: 50%;
+  font-size: 20px;
+  line-height: 1;
+  text-decoration: none;
+  cursor: pointer;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(20px);
+  transition: opacity 0.3s ease, visibility 0.3s ease, transform 0.3s ease, background-color 0.3s ease;
+  box-shadow: 0 2px 8px rgb(0 0 0 / 20%);
+}
+
+.back-to-top.visible {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+.back-to-top:hover {
+  background-color: var(--accent-primary-hover);
+  text-decoration: none;
+  color: var(--text-color-inverted);
+  transform: translateY(-2px);
+}
+
+/* ===========================================
+   GALLERY GRID
+   =========================================== */
+
+.section > .default-content-wrapper > p:has(> a > img) {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+  gap: 8px;
+  margin: 0;
+}
+
+.section > .default-content-wrapper > p > a:has(img) {
+  display: block;
+  overflow: hidden;
+  border-radius: var(--border-radius-s);
+  line-height: 0;
+  cursor: pointer;
+}
+
+.section > .default-content-wrapper > p > a:has(img) img {
+  width: 100%;
+  height: 150px;
+  object-fit: cover;
+  transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+.section > .default-content-wrapper > p > a:has(img):hover img {
+  transform: scale(1.05);
+  opacity: 0.9;
+}
+
+@media (width >= 600px) {
+  .section > .default-content-wrapper > p:has(> a > img) {
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 12px;
+  }
+
+  .section > .default-content-wrapper > p > a:has(img) img {
+    height: 200px;
+  }
+}
+
+/* ===========================================
+   LIGHTBOX OVERLAY
+   =========================================== */
+
+.lightbox-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 10000;
+  background: rgb(0 0 0 / 90%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s ease, visibility 0.3s ease;
+  cursor: zoom-out;
+}
+
+.lightbox-overlay.active {
+  opacity: 1;
+  visibility: visible;
+}
+
+.lightbox-overlay img {
+  max-width: 90vw;
+  max-height: 90vh;
+  object-fit: contain;
+  border-radius: 4px;
+  box-shadow: 0 4px 24px rgb(0 0 0 / 50%);
+  transform: scale(0.9);
+  transition: transform 0.3s ease;
+}
+
+.lightbox-overlay.active img {
+  transform: scale(1);
+}
+
+.lightbox-close {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: none;
+  border: none;
+  color: #fff;
+  font-size: 32px;
+  cursor: pointer;
+  opacity: 0.7;
+  transition: opacity 0.2s ease;
+  padding: 0;
+}
+
+.lightbox-close:hover {
+  opacity: 1;
+  background: none;
+}
+
+.lightbox-nav {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 50px;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgb(255 255 255 / 10%);
+  border: none;
+  border-radius: 50%;
+  color: #fff;
+  font-size: 24px;
+  cursor: pointer;
+  opacity: 0.7;
+  transition: opacity 0.2s ease, background 0.2s ease;
+  padding: 0;
+}
+
+.lightbox-nav:hover {
+  opacity: 1;
+  background: rgb(255 255 255 / 20%);
+}
+
+.lightbox-prev {
+  left: 20px;
+}
+
+.lightbox-next {
+  right: 20px;
+}

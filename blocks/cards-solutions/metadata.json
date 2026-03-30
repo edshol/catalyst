@@ -1,0 +1,38 @@
+{
+  "variantName": "cards-solutions",
+  "baseBlock": "cards",
+  "version": "1.0.0",
+  "created": "2026-03-23T22:32:00.000Z",
+  "sourceContext": {
+    "originUrl": "https://business.adobe.com/jp/",
+    "originPage": "Adobe Business Japan homepage",
+    "blockPosition": "middle"
+  },
+  "visualCharacteristics": {
+    "colorScheme": "dark",
+    "density": "spacious",
+    "purpose": "solution-cards",
+    "imagePattern": "background-overlay"
+  },
+  "contentPattern": {
+    "structure": "heading + description + CTA",
+    "buttonCount": 1,
+    "imageCount": 1
+  },
+  "reuseGuidance": {
+    "suitableFor": [
+      "solution overview cards",
+      "service category cards with dark backgrounds",
+      "capability showcase grids"
+    ],
+    "notSuitableFor": [
+      "light-themed product listings",
+      "icon-based feature grids"
+    ]
+  },
+  "usage": {
+    "pagesUsing": ["/jp/index"],
+    "reuseCount": 1,
+    "lastUsed": "2026-03-23T22:32:00.000Z"
+  }
+}

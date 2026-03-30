@@ -1,0 +1,59 @@
+/* Columns CTA - JP Life Consultation CTA */
+
+.columns-cta > div {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.columns-cta > div > div {
+  flex: 1;
+  order: unset;
+}
+
+.columns-cta > div > div p:first-child {
+  font-size: var(--body-font-size-m);
+  color: var(--text-color-muted);
+  margin-bottom: 8px;
+  text-align: center;
+}
+
+.columns-cta > div > div p:last-child {
+  margin: 0;
+}
+
+.columns-cta > div > div p a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 16px 24px;
+  background-color: var(--brand-blue-light);
+  border: 1px solid var(--border-color);
+  border-radius: var(--border-radius-m);
+  color: var(--text-color);
+  font-size: var(--button-font-size);
+  font-weight: 700;
+  text-decoration: none;
+  text-align: center;
+  transition: var(--button-transition);
+  min-height: 56px;
+}
+
+.columns-cta > div > div p a:hover {
+  background-color: var(--brand-blue);
+  color: var(--text-color-inverted);
+  border-color: var(--brand-blue);
+  text-decoration: none;
+}
+
+.columns-cta img {
+  display: none;
+}
+
+@media (width >= 900px) {
+  .columns-cta > div {
+    flex-direction: row;
+    gap: 24px;
+    align-items: stretch;
+  }
+}

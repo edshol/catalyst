@@ -1,0 +1,179 @@
+/* Tabs Products - Adobe Business JP */
+/* Product category tabs with horizontal scrolling tab bar */
+
+.tabs-products {
+  max-width: var(--container-max-width);
+  margin: 0 auto;
+}
+
+/* Tab list container */
+.tabs-products .tabs-products-list {
+  display: flex;
+  gap: 0;
+  max-width: 100%;
+  overflow-x: auto;
+  border-bottom: 2px solid #e8e8e8;
+  scrollbar-width: none;
+  -webkit-overflow-scrolling: touch;
+}
+
+.tabs-products .tabs-products-list::-webkit-scrollbar {
+  display: none;
+}
+
+/* Individual tab buttons */
+.tabs-products .tabs-products-list button {
+  flex: 0 0 max-content;
+  margin: 0;
+  border: none;
+  border-bottom: 3px solid transparent;
+  border-radius: 0;
+  padding: 12px 20px;
+  background-color: transparent;
+  color: var(--text-color);
+  font-size: var(--body-font-size-m);
+  font-weight: 600;
+  line-height: 1.4;
+  text-align: center;
+  cursor: pointer;
+  white-space: nowrap;
+  transition: border-color 0.2s ease, color 0.2s ease;
+  position: relative;
+  bottom: -2px;
+}
+
+.tabs-products .tabs-products-list button p {
+  margin: 0;
+}
+
+.tabs-products .tabs-products-list button:hover {
+  color: var(--accent-primary);
+  background-color: transparent;
+  border-color: transparent;
+}
+
+/* Active tab */
+.tabs-products .tabs-products-list button[aria-selected='true'] {
+  border-bottom-color: var(--text-color);
+  color: var(--text-color);
+  background-color: #fff;
+  cursor: default;
+}
+
+/* Tab panel content */
+.tabs-products .tabs-products-panel {
+  padding: 32px 0;
+  border: none;
+  margin-top: 0;
+  overflow: visible;
+}
+
+.tabs-products .tabs-products-panel[aria-hidden='true'] {
+  display: none;
+}
+
+/* Description card - cream background */
+.tabs-products .tabs-products-panel > div {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.tabs-products .tabs-products-panel h3 {
+  font-size: var(--heading-font-size-l);
+  margin-bottom: 8px;
+}
+
+.tabs-products .tabs-products-panel h3,
+.tabs-products .tabs-products-panel h3 + p {
+  background-color: #fef7e8;
+  border-radius: var(--border-radius-l);
+  padding: 28px 28px 0;
+  margin: 0;
+}
+
+.tabs-products .tabs-products-panel h3 + p {
+  padding: 0 28px 28px;
+  font-size: var(--body-font-size-m);
+  color: var(--text-color);
+  line-height: 1.7;
+}
+
+.tabs-products .tabs-products-panel p {
+  font-size: var(--body-font-size-m);
+  color: var(--text-color);
+  line-height: 1.7;
+  margin-bottom: 0;
+}
+
+/* Product links list - cream card */
+.tabs-products .tabs-products-panel ul {
+  list-style: none;
+  padding: 20px 28px;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  background-color: #fef7e8;
+  border-radius: var(--border-radius-l);
+}
+
+.tabs-products .tabs-products-panel ul li {
+  padding: 0;
+  border-bottom: none;
+}
+
+/* Product links - plain text style with underline on hover */
+.tabs-products .tabs-products-panel ul li a {
+  color: var(--text-color);
+  font-weight: 500;
+  font-size: var(--body-font-size-m);
+  display: inline-block;
+  padding: 4px 0;
+  border: none;
+  border-radius: 0;
+  text-decoration: underline;
+  transition: color 0.2s ease;
+}
+
+.tabs-products .tabs-products-panel ul li a:hover {
+  color: var(--link-color);
+  text-decoration: underline;
+  background-color: transparent;
+}
+
+/* "See all products" CTA - centered, outline */
+.tabs-products .tabs-products-panel > div > p:last-child {
+  text-align: center;
+  margin-top: 8px;
+}
+
+.tabs-products .tabs-products-panel > div > p:last-child a {
+  display: inline-flex;
+  align-items: center;
+  border: 2px solid var(--text-color);
+  border-radius: var(--button-border-radius);
+  padding: 10px 24px;
+  color: var(--text-color);
+  font-weight: 700;
+  text-decoration: none;
+  background-color: transparent;
+  transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.tabs-products .tabs-products-panel > div > p:last-child a:hover {
+  background-color: var(--text-color);
+  color: var(--text-color-inverted);
+  text-decoration: none;
+}
+
+@media (width >= 900px) {
+  .tabs-products .tabs-products-list button {
+    font-size: var(--body-font-size-m);
+    padding: 16px 24px;
+  }
+
+  .tabs-products .tabs-products-panel {
+    padding: 40px 0;
+  }
+}

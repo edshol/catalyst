@@ -1,5 +1,6 @@
 import { createOptimizedPicture } from '../../scripts/aem.js';
-import { moveInstrumentation } from '../../scripts/scripts.js';
+// moveInstrumentation is not exported from scripts.js; provide a local no-op
+function moveInstrumentation() {}
 
 export default function decorate(block) {
   /* change to ul, li */

@@ -1,0 +1,38 @@
+{
+  "variantName": "cards-product",
+  "baseBlock": "cards",
+  "version": "1.0.0",
+  "created": "2026-03-23T08:10:00.000Z",
+  "sourceContext": {
+    "originUrl": "https://www.jp-life.japanpost.jp/",
+    "originPage": "Japan Post Life Insurance homepage",
+    "blockPosition": "middle"
+  },
+  "visualCharacteristics": {
+    "colorScheme": "light",
+    "density": "spacious",
+    "purpose": "product-catalog",
+    "imagePattern": "noimg"
+  },
+  "contentPattern": {
+    "structure": "product name + description + link",
+    "buttonCount": 0,
+    "imageCount": 0
+  },
+  "reuseGuidance": {
+    "suitableFor": [
+      "insurance product listings",
+      "service catalog grids",
+      "category overview cards"
+    ],
+    "notSuitableFor": [
+      "image-heavy article cards",
+      "feature grids with icons"
+    ]
+  },
+  "usage": {
+    "pagesUsing": ["content/index"],
+    "reuseCount": 1,
+    "lastUsed": "2026-03-23T08:10:00.000Z"
+  }
+}

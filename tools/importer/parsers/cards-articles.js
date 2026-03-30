@@ -1,108 +1,53 @@
 /* eslint-disable */
 /* global WebImporter */
-
 /**
- * Parser for cards-articles block
- *
- * Source: https://www.wknd-trendsetters.site/
- * Base Block: cards
- *
- * Block Structure:
- * - Row per article: Column 1 = Image, Column 2 = Tag + read time, heading, description, CTA
- *
- * Source HTML Pattern:
- * <div class="w-layout-grid grid-layout tablet-1-column grid-gap-md">
- *   <a href="..." class="utility-link-content-block ...">
- *     <div class="w-layout-grid grid-layout ...">
- *       <img alt="..." src="..." class="cover-image utility-aspect-1x1">
- *       <div>
- *         <div class="flex-horizontal ...">
- *           <div class="tag"><div>Category</div></div>
- *           <div class="paragraph-sm ...">X min read</div>
- *         </div>
- *         <h3 class="h4-heading">Title</h3>
- *         <p>Description</p>
- *         <div>Read</div>
- *       </div>
- *     </div>
- *   </a>
- * </div>
- *
- * Generated: 2026-01-19
+ * Parser for cards-articles. Base: cards.
+ * Source: https://www.jp-life.japanpost.jp/
+ * Selectors: .list__panel li
+ * Target: 2-column cards - image | text (title + description + link)
+ * Generated: 2026-03-23
  */
 export default function parse(element, { document }) {
-  // Extract article card links
-  // Source HTML uses a.utility-link-content-block for each card
-  const articleCards = element.querySelectorAll('a.utility-link-content-block');
-
-  // Build cells array - one row per article card
+  const items = Array.from(element.querySelectorAll(':scope > li'));
   const cells = [];
 
-  articleCards.forEach(card => {
-    // Extract image
-    const img = card.querySelector('img.cover-image, img.utility-aspect-1x1, img');
+  items.forEach((item) => {
+    const link = item.querySelector('a');
+    const img = item.querySelector('img');
 
-    // Extract tag/category
-    const tag = card.querySelector('.tag div, .tag');
-    const tagText = tag ? tag.textContent.trim() : '';
+    const contentCell = [];
 
-    // Extract read time
-    const readTime = card.querySelector('.paragraph-sm');
-    const readTimeText = readTime ? readTime.textContent.trim() : '';
+    const titleEl = item.querySelector('.list__panel__title, h3, [class*="title"]');
+    const descEl = item.querySelector('.list__panel__text, p:not([class*="title"])', item);
 
-    // Extract heading
-    const heading = card.querySelector('h3, .h4-heading, h4');
-
-    // Extract description
-    const description = card.querySelector('p');
-
-    // Extract link URL
-    const href = card.getAttribute('href') || '';
-
-    // Build content cell
-    const contentCell = document.createElement('div');
-
-    // Add tag and read time
-    if (tagText || readTimeText) {
-      const metaLine = document.createElement('p');
-      metaLine.innerHTML = `<strong>${tagText}</strong> ${readTimeText}`;
-      contentCell.appendChild(metaLine);
-    }
-
-    // Add heading
-    if (heading) {
+    if (titleEl) {
       const h3 = document.createElement('h3');
-      h3.textContent = heading.textContent.trim();
-      contentCell.appendChild(h3);
+      h3.textContent = titleEl.textContent.trim();
+      contentCell.push(h3);
     }
 
-    // Add description
-    if (description) {
+    if (descEl && descEl !== titleEl) {
       const p = document.createElement('p');
-      p.textContent = description.textContent.trim();
-      contentCell.appendChild(p);
+      p.textContent = descEl.textContent.trim();
+      contentCell.push(p);
     }
 
-    // Add CTA link
-    if (href) {
-      const link = document.createElement('a');
-      link.href = href;
-      link.textContent = 'Read';
-      contentCell.appendChild(link);
+    if (link) {
+      const a = document.createElement('a');
+      a.href = link.href;
+      a.textContent = titleEl ? titleEl.textContent.trim() : link.textContent.trim();
+      const pLink = document.createElement('p');
+      pLink.append(a);
+      contentCell.push(pLink);
     }
 
-    // Build row: [image, content]
-    if (img) {
-      const imgClone = img.cloneNode(true);
-      cells.push([imgClone, contentCell]);
-    } else {
+    if (img && contentCell.length > 0) {
+      cells.push([img, contentCell]);
+    } else if (contentCell.length > 0) {
       cells.push([contentCell]);
     }
   });
 
-  // Create block using WebImporter utility
-  const block = WebImporter.Blocks.createBlock(document, { name: 'Cards-Articles', cells });
-
-  // Replace original element with structured block table
+  const block = WebImporter.Blocks.createBlock(document, { name: 'cards-articles', cells });
   element.replaceWith(block);
 }
