@@ -1,0 +1,148 @@
+/* Tabs News - JP Life News/Press Release Tabs */
+
+.tabs-news {
+  border: 1px solid #e0e0e0;
+  border-radius: var(--border-radius-m);
+  overflow: hidden;
+  background-color: var(--background-color);
+}
+
+.tabs-news .tabs-news-list {
+  display: flex;
+  gap: 0;
+  max-width: 100%;
+  overflow-x: auto;
+  border-bottom: 2px solid var(--brand-blue);
+  background-color: var(--bg-light-gray);
+}
+
+.tabs-news .tabs-news-list button {
+  flex: 1 1 0;
+  min-width: max-content;
+  margin: 0;
+  border: none;
+  border-right: 1px solid #e0e0e0;
+  border-radius: 0;
+  padding: 14px 20px;
+  background-color: var(--bg-light-gray);
+  color: var(--text-color);
+  font-size: var(--body-font-size-m);
+  font-weight: 700;
+  line-height: 1.4;
+  text-align: center;
+  white-space: nowrap;
+  cursor: pointer;
+  transition: background-color 0.2s, color 0.2s;
+  position: relative;
+}
+
+.tabs-news .tabs-news-list button:last-child {
+  border-right: none;
+}
+
+.tabs-news .tabs-news-list button p {
+  margin: 0;
+}
+
+.tabs-news .tabs-news-list button:hover {
+  background-color: var(--brand-blue-light);
+  color: var(--brand-blue);
+  border-color: #e0e0e0;
+}
+
+.tabs-news .tabs-news-list button[aria-selected='true'] {
+  background-color: var(--brand-blue);
+  color: var(--text-color-inverted);
+  border-color: var(--brand-blue);
+  cursor: default;
+}
+
+.tabs-news .tabs-news-list button[aria-selected='true']::after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background-color: var(--brand-blue);
+}
+
+/* Panel content */
+.tabs-news .tabs-news-panel {
+  margin-top: 0;
+  padding: 20px 24px;
+  border: none;
+  overflow: auto;
+  min-height: 200px;
+}
+
+.tabs-news .tabs-news-panel[aria-hidden='true'] {
+  display: none;
+}
+
+.tabs-news .tabs-news-panel p {
+  margin: 0;
+  padding: 12px 0;
+  border-bottom: 1px solid #f0f0f0;
+  font-size: var(--body-font-size-m);
+  line-height: 1.6;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 8px;
+}
+
+.tabs-news .tabs-news-panel p:last-child {
+  border-bottom: none;
+}
+
+/* Date styling */
+.tabs-news .tabs-news-panel p em {
+  font-style: normal;
+  font-size: var(--body-font-size-s);
+  color: var(--text-color-muted);
+  white-space: nowrap;
+  min-width: 100px;
+}
+
+/* Category tags */
+.tabs-news .tabs-news-panel p strong {
+  display: inline-block;
+  padding: 2px 8px;
+  background-color: var(--brand-blue);
+  border-radius: 3px;
+  font-size: var(--body-font-size-xs);
+  font-weight: 700;
+  color: var(--text-color-inverted);
+  white-space: nowrap;
+}
+
+/* News links */
+.tabs-news .tabs-news-panel p a {
+  color: var(--text-color);
+  text-decoration: none;
+  flex: 1;
+  min-width: 0;
+}
+
+.tabs-news .tabs-news-panel p a:hover {
+  color: var(--brand-blue);
+  text-decoration: underline;
+}
+
+@media (width >= 600px) {
+  .tabs-news .tabs-news-list button {
+    font-size: var(--body-font-size-l);
+    padding: 16px 24px;
+  }
+
+  .tabs-news .tabs-news-panel p {
+    flex-wrap: nowrap;
+  }
+}
+
+@media (width >= 900px) {
+  .tabs-news .tabs-news-panel {
+    padding: 24px 32px;
+  }
+}

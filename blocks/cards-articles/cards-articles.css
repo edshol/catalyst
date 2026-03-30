@@ -1,0 +1,105 @@
+/* Cards Articles - JP Life Article/Info Cards */
+
+.cards-articles > ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 20px;
+}
+
+.cards-articles > ul > li {
+  background-color: var(--background-color);
+  border: none;
+  border-radius: var(--border-radius-m);
+  overflow: hidden;
+  box-shadow: 0 2px 8px rgba(0 0 0 / 8%);
+  transition: box-shadow 0.2s, transform 0.2s;
+}
+
+.cards-articles > ul > li:hover {
+  box-shadow: 0 4px 16px rgba(0 0 0 / 12%);
+  transform: translateY(-2px);
+}
+
+.cards-articles .cards-articles-card-image {
+  line-height: 0;
+  overflow: hidden;
+}
+
+.cards-articles > ul > li img {
+  width: 100%;
+  aspect-ratio: 16 / 10;
+  object-fit: cover;
+  transition: transform 0.3s;
+}
+
+.cards-articles > ul > li:hover img {
+  transform: scale(1.03);
+}
+
+.cards-articles .cards-articles-card-body {
+  padding: 16px 20px 20px;
+  margin: 0;
+}
+
+.cards-articles .cards-articles-card-body h3 {
+  font-size: var(--heading-font-size-xs);
+  font-weight: 700;
+  color: var(--text-color);
+  margin: 0 0 8px;
+  line-height: 1.5;
+}
+
+.cards-articles .cards-articles-card-body p {
+  font-size: var(--body-font-size-m);
+  color: var(--text-color-muted);
+  margin: 0 0 12px;
+  line-height: 1.6;
+}
+
+.cards-articles .cards-articles-card-body p:last-child {
+  margin-bottom: 0;
+}
+
+.cards-articles .cards-articles-card-body p a {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  color: var(--brand-blue);
+  font-size: var(--body-font-size-m);
+  font-weight: 500;
+  text-decoration: none;
+}
+
+.cards-articles .cards-articles-card-body p a::after {
+  content: '';
+  display: inline-block;
+  width: 6px;
+  height: 6px;
+  border-top: 2px solid var(--brand-blue);
+  border-right: 2px solid var(--brand-blue);
+  transform: rotate(45deg);
+}
+
+.cards-articles .cards-articles-card-body p a:hover {
+  text-decoration: underline;
+}
+
+@media (width >= 600px) {
+  .cards-articles > ul {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (width >= 900px) {
+  .cards-articles > ul {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+  }
+
+  .cards-articles .cards-articles-card-body h3 {
+    font-size: var(--heading-font-size-s);
+  }
+}

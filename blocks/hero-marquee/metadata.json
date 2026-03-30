@@ -1,0 +1,38 @@
+{
+  "variantName": "hero-marquee",
+  "baseBlock": "hero",
+  "version": "1.0.0",
+  "created": "2026-03-23T22:32:00.000Z",
+  "sourceContext": {
+    "originUrl": "https://business.adobe.com/jp/",
+    "originPage": "Adobe Business Japan homepage",
+    "blockPosition": "top"
+  },
+  "visualCharacteristics": {
+    "colorScheme": "dark",
+    "density": "spacious",
+    "purpose": "hero-marquee",
+    "imagePattern": "large-background"
+  },
+  "contentPattern": {
+    "structure": "eyebrow + heading + description + 2 CTAs",
+    "buttonCount": 2,
+    "imageCount": 1
+  },
+  "reuseGuidance": {
+    "suitableFor": [
+      "homepage hero banners with background images",
+      "campaign landing pages",
+      "dark hero sections with prominent CTAs"
+    ],
+    "notSuitableFor": [
+      "simple text-only heroes",
+      "light background heroes without images"
+    ]
+  },
+  "usage": {
+    "pagesUsing": ["/jp/index"],
+    "reuseCount": 1,
+    "lastUsed": "2026-03-23T22:32:00.000Z"
+  }
+}

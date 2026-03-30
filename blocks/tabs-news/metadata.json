@@ -1,0 +1,38 @@
+{
+  "variantName": "tabs-news",
+  "baseBlock": "tabs",
+  "version": "1.0.0",
+  "created": "2026-03-23T08:10:00.000Z",
+  "sourceContext": {
+    "originUrl": "https://www.jp-life.japanpost.jp/",
+    "originPage": "Japan Post Life Insurance homepage",
+    "blockPosition": "bottom"
+  },
+  "visualCharacteristics": {
+    "colorScheme": "light",
+    "density": "compact",
+    "purpose": "news-tabs",
+    "imagePattern": "noimg"
+  },
+  "contentPattern": {
+    "structure": "tab label + dated news list items",
+    "buttonCount": 0,
+    "imageCount": 0
+  },
+  "reuseGuidance": {
+    "suitableFor": [
+      "news/press release tabbed lists",
+      "announcement sections",
+      "categorized text content tabs"
+    ],
+    "notSuitableFor": [
+      "image gallery tabs",
+      "content showcase tabs"
+    ]
+  },
+  "usage": {
+    "pagesUsing": ["content/index"],
+    "reuseCount": 1,
+    "lastUsed": "2026-03-23T08:10:00.000Z"
+  }
+}

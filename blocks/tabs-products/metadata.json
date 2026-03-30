@@ -1,0 +1,38 @@
+{
+  "variantName": "tabs-products",
+  "baseBlock": "tabs",
+  "version": "1.0.0",
+  "created": "2026-03-23T22:32:00.000Z",
+  "sourceContext": {
+    "originUrl": "https://business.adobe.com/jp/",
+    "originPage": "Adobe Business Japan homepage",
+    "blockPosition": "middle"
+  },
+  "visualCharacteristics": {
+    "colorScheme": "light",
+    "density": "spacious",
+    "purpose": "product-showcase",
+    "imagePattern": "mixed"
+  },
+  "contentPattern": {
+    "structure": "tab label + product description with image + product links list + CTA",
+    "buttonCount": 0,
+    "imageCount": 1
+  },
+  "reuseGuidance": {
+    "suitableFor": [
+      "product category tabs",
+      "service category showcases",
+      "multi-category product listings"
+    ],
+    "notSuitableFor": [
+      "news/press release tabs",
+      "simple text-only tabbed content"
+    ]
+  },
+  "usage": {
+    "pagesUsing": ["/jp/index"],
+    "reuseCount": 1,
+    "lastUsed": "2026-03-23T22:32:00.000Z"
+  }
+}

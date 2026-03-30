@@ -1,0 +1,38 @@
+{
+  "variantName": "columns-cta",
+  "baseBlock": "columns",
+  "version": "1.0.0",
+  "created": "2026-03-23T08:10:00.000Z",
+  "sourceContext": {
+    "originUrl": "https://www.jp-life.japanpost.jp/",
+    "originPage": "Japan Post Life Insurance homepage",
+    "blockPosition": "middle"
+  },
+  "visualCharacteristics": {
+    "colorScheme": "accent",
+    "density": "compact",
+    "purpose": "cta-buttons",
+    "imagePattern": "icons"
+  },
+  "contentPattern": {
+    "structure": "icon + text CTA button",
+    "buttonCount": 2,
+    "imageCount": 0
+  },
+  "reuseGuidance": {
+    "suitableFor": [
+      "side-by-side CTA buttons",
+      "action button pairs",
+      "consultation/contact CTAs"
+    ],
+    "notSuitableFor": [
+      "content-heavy columns",
+      "image galleries"
+    ]
+  },
+  "usage": {
+    "pagesUsing": ["content/index"],
+    "reuseCount": 1,
+    "lastUsed": "2026-03-23T08:10:00.000Z"
+  }
+}

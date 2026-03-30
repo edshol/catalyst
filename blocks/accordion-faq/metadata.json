@@ -1,0 +1,38 @@
+{
+  "variantName": "accordion-faq",
+  "baseBlock": "accordion",
+  "version": "1.0.0",
+  "created": "2026-01-19T04:13:00.000Z",
+  "sourceContext": {
+    "originUrl": "https://www.wknd-trendsetters.site/",
+    "originPage": "Fashion Blog homepage",
+    "blockPosition": "bottom"
+  },
+  "visualCharacteristics": {
+    "colorScheme": "grey",
+    "density": "compact",
+    "purpose": "faq",
+    "imagePattern": "noimg"
+  },
+  "contentPattern": {
+    "structure": "question + answer",
+    "buttonCount": 0,
+    "imageCount": 0
+  },
+  "reuseGuidance": {
+    "suitableFor": [
+      "FAQ sections",
+      "Q&A content",
+      "help center pages"
+    ],
+    "notSuitableFor": [
+      "long-form content",
+      "image galleries"
+    ]
+  },
+  "usage": {
+    "pagesUsing": ["/index"],
+    "reuseCount": 1,
+    "lastUsed": "2026-01-19T04:13:00.000Z"
+  }
+}

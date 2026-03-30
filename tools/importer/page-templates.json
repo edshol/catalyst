@@ -1,0 +1,162 @@
+{
+  "templates": [
+    {
+      "name": "homepage",
+      "urls": [
+        "https://rerdade.com/"
+      ],
+      "description": "Rerdade homepage - main landing page with hero, about, school info, staff, gallery, sponsors, news, and access sections",
+      "blocks": [
+        {
+          "name": "hero",
+          "instances": [
+            "#parallax-hero"
+          ]
+        },
+        {
+          "name": "cards",
+          "instances": [
+            "#staff .row",
+            "#sponsor .keen-slider",
+            "#news .blog-entry"
+          ]
+        }
+      ],
+      "sections": [
+        {
+          "id": "hero",
+          "name": "Hero",
+          "selector": [
+            "#parallax-hero",
+            "section#hero"
+          ],
+          "style": "dark",
+          "blocks": [
+            "hero"
+          ],
+          "defaultContent": []
+        },
+        {
+          "id": "about",
+          "name": "About",
+          "selector": "section#about",
+          "style": null,
+          "blocks": [],
+          "defaultContent": [
+            "#about .section-title",
+            "#about .section-desc blockquote",
+            "#about .section-desc p"
+          ]
+        },
+        {
+          "id": "school",
+          "name": "School Info",
+          "selector": "section#school",
+          "style": null,
+          "blocks": [],
+          "defaultContent": [
+            "#school .section-title",
+            "#school .section-desc table",
+            "#school .section-desc ul"
+          ]
+        },
+        {
+          "id": "staff",
+          "name": "Staff",
+          "selector": "section#staff",
+          "style": null,
+          "blocks": [
+            "cards"
+          ],
+          "defaultContent": [
+            "#staff .section-title"
+          ]
+        },
+        {
+          "id": "gallery",
+          "name": "Gallery",
+          "selector": "section#gallery",
+          "style": null,
+          "blocks": [],
+          "defaultContent": [
+            "#gallery .section-title",
+            "#gallery .g-item img"
+          ]
+        },
+        {
+          "id": "sponsor",
+          "name": "Sponsors",
+          "selector": "section#sponsor",
+          "style": null,
+          "blocks": [
+            "cards"
+          ],
+          "defaultContent": [
+            "#sponsor .section-title"
+          ]
+        },
+        {
+          "id": "news",
+          "name": "News",
+          "selector": "section#news",
+          "style": null,
+          "blocks": [
+            "cards"
+          ],
+          "defaultContent": [
+            "#news .section-title",
+            "#news .all-news a"
+          ]
+        },
+        {
+          "id": "access",
+          "name": "Access / Contact",
+          "selector": "section#access",
+          "style": null,
+          "blocks": [],
+          "defaultContent": [
+            "#access .section-title",
+            "#access .section-desc a",
+            "#access .address-box"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "staff-profile",
+      "urls": [
+        "https://rerdade.com/shinozaki-ryuki/",
+        "https://rerdade.com/sugaya-kazutoshi/",
+        "https://rerdade.com/nishimura-yuto/",
+        "https://rerdade.com/fujiwara-koki/",
+        "https://rerdade.com/harada-chisato/"
+      ],
+      "description": "Individual staff profile pages with biography, photo, and career history",
+      "blocks": []
+    },
+    {
+      "name": "staff-directory",
+      "urls": [
+        "https://rerdade.com/all-staff/"
+      ],
+      "description": "Staff directory page with table of all staff members",
+      "blocks": []
+    },
+    {
+      "name": "news-article",
+      "urls": [
+        "https://rerdade.com/2026/02/20/3%e6%9c%88%e5%90%84%e3%82%a4%e3%83%99%e3%83%b3%e3%83%88%e3%81%ae%e3%81%94%e6%a1%88%e5%86%85/"
+      ],
+      "description": "Individual news article/blog post page",
+      "blocks": []
+    },
+    {
+      "name": "news-listing",
+      "urls": [
+        "https://rerdade.com/news/"
+      ],
+      "description": "News archive listing page",
+      "blocks": []
+    }
+  ]
+}

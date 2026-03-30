@@ -14,6 +14,21 @@ import {
 } from './aem.js';
 
 /**
+ * Moves AEM instrumentation attributes from one element to another.
+ * @param {Element} from Source element
+ * @param {Element} to Target element
+ */
+export function moveInstrumentation(from, to) {
+  if (!from || !to) return;
+  [...from.attributes]
+    .filter(({ name }) => name.startsWith('data-aue-') || name.startsWith('data-richtext-'))
+    .forEach(({ name, value }) => {
+      to.setAttribute(name, value);
+      from.removeAttribute(name);
+    });
+}
+
+/**
  * Builds hero block and prepends to main in a new section.
  * @param {Element} main The container element
  */
@@ -94,7 +109,7 @@ export function decorateMain(main) {
  * @param {Element} doc The container element
  */
 async function loadEager(doc) {
-  document.documentElement.lang = 'en';
+  document.documentElement.lang = 'ja';
   decorateTemplateAndTheme();
   const main = doc.querySelector('main');
   if (main) {

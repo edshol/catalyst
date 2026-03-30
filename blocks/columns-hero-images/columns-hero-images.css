@@ -1,0 +1,33 @@
+.columns-hero-images > div {
+  display: flex;
+  flex-direction: column;
+}
+
+.columns-hero-images img {
+  width: 100%;
+}
+
+.columns-hero-images > div > div {
+  order: 1;
+}
+
+.columns-hero-images > div > .columns-hero-images-img-col {
+  order: 0;
+}
+
+.columns-hero-images > div > .columns-hero-images-img-col img {
+  display: block;
+}
+
+@media (width >= 900px) {
+  .columns-hero-images > div {
+    align-items: center;
+    flex-direction: unset;
+    gap: 24px;
+  }
+
+  .columns-hero-images > div > div {
+    flex: 1;
+    order: unset;
+  }
+}

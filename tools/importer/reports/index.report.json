@@ -1,0 +1,14 @@
+{
+  "status": "success",
+  "url": "https://rerdade.com/",
+  "path": "index",
+  "timestamp": "2026-03-29T15:15:03.430Z",
+  "title": "rerdade futebolista – 人生を楽しむフットボーラーの育成",
+  "template": "homepage",
+  "blocks": [
+    "hero",
+    "cards",
+    "cards",
+    "cards"
+  ]
+}

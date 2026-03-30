@@ -1,88 +1,152 @@
 /*
- * Copyright 2020 Adobe. All rights reserved.
- * This file is licensed to you under the Apache License, Version 2.0 (the "License");
- * you may not use this file except in compliance with the License. You may obtain a copy
- * of the License at http://www.apache.org/licenses/LICENSE-2.0
- *
- * Unless required by applicable law or agreed to in writing, software distributed under
- * the License is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR REPRESENTATIONS
- * OF ANY KIND, either express or implied. See the License for the specific language
- * governing permissions and limitations under the License.
+ * rerdade futebolista Design System
+ * Migrated from https://rerdade.com/
  */
-
-:root {
-  /* colors */
-  --background-color: white;
-  --light-color: #f8f8f8;
-  --dark-color: #505050;
-  --text-color: #131313;
-  --link-color: #3b63fb;
-  --link-hover-color: #1d3ecf;
-
-  /* fonts */
-  --body-font-family: roboto, roboto-fallback, sans-serif;
-  --heading-font-family: roboto-condensed, roboto-condensed-fallback, sans-serif;
-
-  /* body sizes */
-  --body-font-size-m: 22px;
-  --body-font-size-s: 19px;
-  --body-font-size-xs: 17px;
-
-  /* heading sizes */
-  --heading-font-size-xxl: 55px;
-  --heading-font-size-xl: 44px;
-  --heading-font-size-l: 34px;
-  --heading-font-size-m: 27px;
-  --heading-font-size-s: 24px;
-  --heading-font-size-xs: 22px;
-
-  /* nav height */
-  --nav-height: 64px;
-}
 
 /* fallback fonts */
 @font-face {
-  font-family: roboto-condensed-fallback;
-  size-adjust: 88.82%;
-  src: local('Arial');
+  font-family: open-sans-fallback;
+  size-adjust: 100%;
+  src: local('Helvetica'), local('Arial');
 }
 
 @font-face {
-  font-family: roboto-fallback;
-  size-adjust: 99.529%;
-  src: local('Arial');
+  font-family: raleway-fallback;
+  size-adjust: 97%;
+  src: local('Helvetica'), local('Arial');
 }
 
+:root {
+  /* ===========================================
+     COLORS
+     =========================================== */
+  --background-color: #fff;
+  --light-color: #f8f9f9;
+  --dark-color: #111;
+  --text-color: #333;
+  --text-color-body: #777;
+  --text-color-inverted: #fff;
+  --text-color-muted: #aaa;
+
+  /* Brand Colors */
+  --accent-primary: #03c4eb;
+  --accent-primary-hover: #02b0d3;
+  --accent-success: #5cb85c;
+  --accent-success-hover: #449d44;
+  --accent-warning: #f0ad4e;
+  --accent-warning-hover: #ec971f;
+
+  /* Section Background Colors */
+  --bg-light-gray: #f8f9f9;
+  --bg-dark: #111;
+
+  /* Link Colors */
+  --link-color: #03c4eb;
+  --link-hover-color: #02b0d3;
+
+  /* ===========================================
+     FONTS
+     =========================================== */
+  --body-font-family: "Open Sans", open-sans-fallback, Helvetica, Arial, sans-serif;
+  --heading-font-family: Raleway, raleway-fallback, Helvetica, Arial, sans-serif;
+
+  /* Body Font Sizes */
+  --body-font-size-xl: 20px;
+  --body-font-size-l: 18.75px;
+  --body-font-size-m: 14px;
+  --body-font-size-s: 13px;
+  --body-font-size-xs: 12px;
+
+  /* Heading Font Sizes - Mobile First */
+  --heading-font-size-xxl: 36px;
+  --heading-font-size-xl: 28px;
+  --heading-font-size-l: 22.5px;
+  --heading-font-size-m: 18px;
+  --heading-font-size-s: 12px;
+  --heading-font-size-xs: 12px;
+
+  /* Typography Details */
+  --heading-letter-spacing: 2px;
+  --heading-text-transform: uppercase;
+  --heading-line-height: 1.3;
+  --heading-font-weight: 800;
+  --body-line-height: 1.7;
+  --body-letter-spacing: normal;
+
+  /* ===========================================
+     SPACING
+     =========================================== */
+  --spacing-xxs: 4px;
+  --spacing-xs: 8px;
+  --spacing-s: 16px;
+  --spacing-m: 24px;
+  --spacing-l: 32px;
+  --spacing-xl: 48px;
+  --spacing-xxl: 66px;
+  --spacing-section: 66px;
+
+  /* ===========================================
+     LAYOUT
+     =========================================== */
+  --nav-height: 64px;
+  --container-max-width: 1170px;
+  --container-padding: 15px;
+
+  /* ===========================================
+     BUTTONS
+     =========================================== */
+  --button-padding: 11px 22px;
+  --button-border-radius: 2px;
+  --button-font-size: 16px;
+  --button-font-weight: 600;
+  --button-text-transform: uppercase;
+  --button-transition: all 0.5s linear;
+
+  /* ===========================================
+     BORDERS & SHADOWS
+     =========================================== */
+  --border-radius-m: 4px;
+  --border-radius-s: 2px;
+  --border-radius-l: 8px;
+  --border-color: #ddd;
+}
+
+/* Desktop breakpoint */
 @media (width >= 900px) {
   :root {
-    /* body sizes */
-    --body-font-size-m: 18px;
-    --body-font-size-s: 16px;
-    --body-font-size-xs: 14px;
+    --heading-font-size-xxl: 60px;
+    --heading-font-size-xl: 30px;
+    --heading-font-size-l: 22.5px;
 
-    /* heading sizes */
-    --heading-font-size-xxl: 45px;
-    --heading-font-size-xl: 36px;
-    --heading-font-size-l: 28px;
-    --heading-font-size-m: 22px;
-    --heading-font-size-s: 20px;
-    --heading-font-size-xs: 18px;
+    --container-padding: 15px;
+    --spacing-section: 66px;
   }
 }
+
+/* ===========================================
+   BASE STYLES
+   =========================================== */
 
 body {
   display: none;
   margin: 0;
   background-color: var(--background-color);
-  color: var(--text-color);
+  color: var(--text-color-body);
   font-family: var(--body-font-family);
   font-size: var(--body-font-size-m);
-  line-height: 1.6;
+  line-height: var(--body-line-height);
+  letter-spacing: var(--body-letter-spacing);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
 body.appear {
   display: block;
 }
+
+/* ===========================================
+   HEADER & FOOTER VISIBILITY
+   =========================================== */
 
 header {
   height: var(--nav-height);
@@ -98,26 +162,57 @@ footer .footer[data-block-status="loaded"] {
   visibility: visible;
 }
 
+/* ===========================================
+   TYPOGRAPHY
+   =========================================== */
+
 h1,
 h2,
 h3,
 h4,
 h5,
 h6 {
-  margin-top: 0.8em;
-  margin-bottom: 0.25em;
+  margin-top: 0;
+  margin-bottom: 0.5em;
   font-family: var(--heading-font-family);
-  font-weight: 600;
-  line-height: 1.25;
+  font-weight: var(--heading-font-weight);
+  line-height: var(--heading-line-height);
+  letter-spacing: var(--heading-letter-spacing);
+  text-transform: var(--heading-text-transform);
+  color: var(--text-color);
   scroll-margin: 40px;
+  word-break: keep-all;
+  overflow-wrap: anywhere;
 }
 
-h1 { font-size: var(--heading-font-size-xxl); }
-h2 { font-size: var(--heading-font-size-xl); }
-h3 { font-size: var(--heading-font-size-l); }
-h4 { font-size: var(--heading-font-size-m); }
-h5 { font-size: var(--heading-font-size-s); }
-h6 { font-size: var(--heading-font-size-xs); }
+h1 {
+  font-size: var(--heading-font-size-xxl);
+}
+
+h2 {
+  font-size: var(--heading-font-size-xl);
+}
+
+h3 {
+  font-size: var(--heading-font-size-l);
+  font-weight: 600;
+  letter-spacing: normal;
+  text-transform: none;
+}
+
+h4 {
+  font-size: var(--heading-font-size-m);
+}
+
+h5 {
+  font-size: var(--heading-font-size-s);
+  font-weight: 700;
+  color: var(--text-color-muted);
+}
+
+h6 {
+  font-size: var(--heading-font-size-xs);
+}
 
 p,
 dl,
@@ -125,8 +220,14 @@ ol,
 ul,
 pre,
 blockquote {
-  margin-top: 0.8em;
-  margin-bottom: 0.25em;
+  margin-top: 0;
+  margin-bottom: 1em;
+}
+
+p {
+  font-size: var(--body-font-size-l);
+  line-height: var(--body-line-height);
+  color: var(--text-color-body);
 }
 
 code,
@@ -136,28 +237,21 @@ pre {
 
 pre {
   padding: 16px;
-  border-radius: 8px;
-  background-color: var(--light-color);
+  border-radius: var(--border-radius-s);
+  background-color: var(--bg-light-gray);
   overflow-x: auto;
   white-space: pre;
 }
 
-main > div {
-  margin: 40px 16px;
-}
+/* ===========================================
+   LINKS
+   =========================================== */
 
-input,
-textarea,
-select,
-button {
-  font: inherit;
-}
-
-/* links */
 a:any-link {
   color: var(--link-color);
   text-decoration: none;
   overflow-wrap: break-word;
+  transition: color 0.3s ease;
 }
 
 a:hover {
@@ -165,50 +259,81 @@ a:hover {
   text-decoration: underline;
 }
 
-/* buttons */
+/* ===========================================
+   BUTTONS
+   =========================================== */
+
 a.button:any-link,
 button {
   box-sizing: border-box;
-  display: inline-block;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--spacing-xs);
   max-width: 100%;
-  margin: 12px 0;
-  border: 2px solid transparent;
-  border-radius: 2.4em;
-  padding: 0.5em 1.2em;
+  margin: 8px 8px 16px 0;
+  border: 1px solid var(--accent-success);
+  border-radius: var(--button-border-radius);
+  padding: var(--button-padding);
   font-family: var(--body-font-family);
-  font-style: normal;
-  font-weight: 500;
+  font-size: var(--button-font-size);
+  font-weight: var(--button-font-weight);
   line-height: 1.25;
   text-align: center;
   text-decoration: none;
-  background-color: var(--link-color);
-  color: var(--background-color);
+  text-transform: var(--button-text-transform);
+  background-color: var(--accent-success);
+  color: var(--text-color-inverted);
   cursor: pointer;
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
+  transition: var(--button-transition);
 }
 
 a.button:hover,
 a.button:focus,
 button:hover,
 button:focus {
-  background-color: var(--link-hover-color);
+  background-color: var(--accent-success-hover);
+  border-color: var(--accent-success-hover);
+  color: var(--text-color-inverted);
   cursor: pointer;
+}
+
+a.button:focus,
+button:focus {
+  outline: 2px solid var(--accent-success);
+  outline-offset: 2px;
 }
 
 button:disabled,
 button:disabled:hover {
-  background-color: var(--light-color);
-  cursor: unset;
+  background-color: var(--bg-light-gray);
+  border-color: var(--border-color);
+  color: var(--text-color-muted);
+  cursor: not-allowed;
+  opacity: 0.6;
 }
 
+/* Secondary button variant (warning/orange) */
 a.button.secondary,
 button.secondary {
-  background-color: unset;
-  border: 2px solid currentcolor;
-  color: var(--text-color);
+  background-color: var(--accent-warning);
+  border: 1px solid var(--accent-warning);
+  color: var(--text-color-inverted);
 }
+
+a.button.secondary:hover,
+button.secondary:hover {
+  background-color: var(--accent-warning-hover);
+  border-color: var(--accent-warning-hover);
+  color: var(--text-color-inverted);
+}
+
+/* ===========================================
+   IMAGES
+   =========================================== */
 
 main img {
   max-width: 100%;
@@ -227,31 +352,192 @@ main img {
   width: 100%;
 }
 
-/* sections */
+/* ===========================================
+   FORM ELEMENTS
+   =========================================== */
+
+input,
+textarea,
+select,
+button {
+  font: inherit;
+}
+
+/* ===========================================
+   LAYOUT - SECTIONS
+   =========================================== */
+
+main > div {
+  margin: var(--spacing-l) var(--container-padding);
+}
+
 main > .section {
-  margin: 40px 0;
+  margin: 0;
+  padding: var(--spacing-section) 0;
 }
 
 main > .section > div {
-  max-width: 1200px;
+  max-width: var(--container-max-width);
   margin: auto;
-  padding: 0 24px;
+  padding: 0 var(--container-padding);
 }
 
 main > .section:first-of-type {
-  margin-top: 0;
+  padding-top: 0;
 }
 
 @media (width >= 900px) {
   main > .section > div {
-    padding: 0 32px;
+    padding: 0 var(--spacing-l);
   }
 }
 
-/* section metadata */
-main .section.light,
-main .section.highlight {
-  background-color: var(--light-color);
-  margin: 0;
-  padding: 40px 0;
+/* ===========================================
+   SECTION VARIANTS
+   =========================================== */
+
+/* Dark section (hero) */
+main .section.dark {
+  background-color: var(--bg-dark);
+  color: var(--text-color-inverted);
+}
+
+main .section.dark h1,
+main .section.dark h2,
+main .section.dark h3,
+main .section.dark h4,
+main .section.dark h5,
+main .section.dark h6 {
+  color: var(--text-color-inverted);
+}
+
+main .section.dark p {
+  color: var(--text-color-inverted);
+}
+
+main .section.dark a:any-link {
+  color: var(--text-color-inverted);
+}
+
+main .section.dark a.button:any-link,
+main .section.dark button {
+  background-color: var(--accent-success);
+  color: var(--text-color-inverted);
+  border-color: var(--accent-success);
+}
+
+main .section.dark a.button.secondary,
+main .section.dark button.secondary {
+  background-color: var(--accent-warning);
+  border-color: var(--accent-warning);
+  color: var(--text-color-inverted);
+}
+
+/* Alternating section backgrounds */
+main > .section:nth-child(even) {
+  background-color: var(--bg-light-gray);
+}
+
+/* Light gray section (explicit) */
+main .section.light-gray {
+  background-color: var(--bg-light-gray);
+}
+
+/* ===========================================
+   DEFAULT CONTENT STYLING
+   =========================================== */
+
+/* Section labels (h5) */
+main .section > .default-content-wrapper > h5 {
+  text-align: center;
+  color: var(--text-color-muted);
+  font-size: var(--heading-font-size-s);
+  font-weight: 700;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  margin-bottom: 8px;
+}
+
+/* Section headings (h2) */
+main .section > .default-content-wrapper > h2 {
+  text-align: center;
+  margin-bottom: 24px;
+}
+
+/* Body text within sections */
+main .section > .default-content-wrapper > p {
+  font-size: var(--body-font-size-l);
+  line-height: var(--body-line-height);
+  color: var(--text-color-body);
+}
+
+/* ===========================================
+   BLOCKQUOTE STYLING
+   =========================================== */
+
+main blockquote {
+  margin: 20px 0;
+  padding: 0;
+  border-left: none;
+  background-color: transparent;
+  font-style: normal;
+  font-size: var(--body-font-size-l);
+  line-height: var(--body-line-height);
+}
+
+main blockquote p {
+  font-size: var(--body-font-size-l);
+  line-height: var(--body-line-height);
+  color: var(--text-color-body);
+  margin-bottom: 0.5em;
+}
+
+/* ===========================================
+   TABLE STYLING
+   =========================================== */
+
+main table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 20px;
+  font-size: var(--body-font-size-l);
+  line-height: var(--body-line-height);
+}
+
+main table td,
+main table th {
+  padding: 5px;
+  border: 1px solid var(--border-color);
+  text-align: left;
+}
+
+main table tr:first-child td {
+  font-weight: 700;
+  background-color: var(--bg-light-gray);
+}
+
+/* ===========================================
+   LIST STYLING
+   =========================================== */
+
+main ul,
+main ol {
+  padding-left: 1.5em;
+  font-size: var(--body-font-size-l);
+  line-height: var(--body-line-height);
+}
+
+main li {
+  margin-bottom: 0.5em;
+  color: var(--text-color-body);
+}
+
+/* ===========================================
+   FOOTER STYLING
+   =========================================== */
+
+footer {
+  background-color: var(--bg-dark);
+  color: #bbb;
+  font-size: var(--body-font-size-m);
 }

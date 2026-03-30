@@ -1,0 +1,59 @@
+/* Cards Features - JP Life Feature Highlights */
+/* Displayed on brand-blue section background */
+
+.cards-features > ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 20px;
+}
+
+.cards-features > ul > li {
+  background-color: transparent;
+  border: none;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding: 20px;
+}
+
+.cards-features .cards-features-card-image {
+  line-height: 0;
+  margin-bottom: 16px;
+}
+
+.cards-features > ul > li img {
+  width: 64px;
+  height: 64px;
+  aspect-ratio: 1 / 1;
+  object-fit: contain;
+}
+
+.cards-features .cards-features-card-body {
+  margin: 0;
+  font-size: var(--body-font-size-l);
+  font-weight: 700;
+  line-height: 1.6;
+  color: inherit;
+}
+
+@media (width >= 600px) {
+  .cards-features > ul {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+  }
+}
+
+@media (width >= 900px) {
+  .cards-features > ul > li img {
+    width: 80px;
+    height: 80px;
+  }
+
+  .cards-features .cards-features-card-body {
+    font-size: var(--heading-font-size-s);
+  }
+}

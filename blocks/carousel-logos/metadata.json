@@ -1,0 +1,38 @@
+{
+  "variantName": "carousel-logos",
+  "baseBlock": "carousel",
+  "version": "1.0.0",
+  "created": "2026-03-23T22:32:00.000Z",
+  "sourceContext": {
+    "originUrl": "https://business.adobe.com/jp/",
+    "originPage": "Adobe Business Japan homepage",
+    "blockPosition": "bottom"
+  },
+  "visualCharacteristics": {
+    "colorScheme": "light",
+    "density": "minimal",
+    "purpose": "customer-logos",
+    "imagePattern": "logos"
+  },
+  "contentPattern": {
+    "structure": "logo image + link to case study",
+    "buttonCount": 0,
+    "imageCount": 6
+  },
+  "reuseGuidance": {
+    "suitableFor": [
+      "customer logo carousels",
+      "brand partner showcases",
+      "trust badge carousels"
+    ],
+    "notSuitableFor": [
+      "hero image carousels",
+      "content-heavy slide shows"
+    ]
+  },
+  "usage": {
+    "pagesUsing": ["/jp/index"],
+    "reuseCount": 1,
+    "lastUsed": "2026-03-23T22:32:00.000Z"
+  }
+}

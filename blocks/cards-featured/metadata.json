@@ -1,0 +1,38 @@
+{
+  "variantName": "cards-featured",
+  "baseBlock": "cards",
+  "version": "1.0.0",
+  "created": "2026-03-23T22:32:00.000Z",
+  "sourceContext": {
+    "originUrl": "https://business.adobe.com/jp/",
+    "originPage": "Adobe Business Japan homepage",
+    "blockPosition": "top"
+  },
+  "visualCharacteristics": {
+    "colorScheme": "mixed",
+    "density": "spacious",
+    "purpose": "featured-content",
+    "imagePattern": "large-images"
+  },
+  "contentPattern": {
+    "structure": "image + eyebrow + heading + description + CTA",
+    "buttonCount": 1,
+    "imageCount": 1
+  },
+  "reuseGuidance": {
+    "suitableFor": [
+      "featured content highlights",
+      "announcement cards with images",
+      "news/release cards with eyebrow labels"
+    ],
+    "notSuitableFor": [
+      "icon-based feature grids",
+      "product catalog cards without images"
+    ]
+  },
+  "usage": {
+    "pagesUsing": ["/jp/index"],
+    "reuseCount": 1,
+    "lastUsed": "2026-03-23T22:32:00.000Z"
+  }
+}

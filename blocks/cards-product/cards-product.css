@@ -1,0 +1,95 @@
+/* Cards Product - JP Life Insurance Product Cards */
+
+.cards-product > ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 16px;
+}
+
+.cards-product > ul > li {
+  border: 1px solid #e0e0e0;
+  border-radius: var(--border-radius-m);
+  background-color: var(--background-color);
+  overflow: hidden;
+  transition: box-shadow 0.2s;
+}
+
+.cards-product > ul > li:hover {
+  box-shadow: 0 4px 12px rgba(0 0 0 / 10%);
+}
+
+.cards-product .cards-product-card-image {
+  display: none;
+}
+
+.cards-product .cards-product-card-body {
+  padding: 20px 16px;
+  text-align: center;
+}
+
+.cards-product .cards-product-card-body h3 {
+  font-size: var(--heading-font-size-s);
+  font-weight: 700;
+  color: var(--brand-blue);
+  margin: 0 0 8px;
+  text-align: center;
+}
+
+.cards-product .cards-product-card-body p {
+  font-size: var(--body-font-size-m);
+  color: var(--text-color-muted);
+  margin: 0 0 12px;
+  line-height: 1.5;
+}
+
+.cards-product .cards-product-card-body p:last-child {
+  margin-bottom: 0;
+}
+
+.cards-product .cards-product-card-body p a {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  color: var(--brand-blue);
+  font-size: var(--body-font-size-m);
+  font-weight: 500;
+  text-decoration: none;
+}
+
+.cards-product .cards-product-card-body p a::after {
+  content: '';
+  display: inline-block;
+  width: 6px;
+  height: 6px;
+  border-top: 2px solid var(--brand-blue);
+  border-right: 2px solid var(--brand-blue);
+  transform: rotate(45deg);
+}
+
+.cards-product .cards-product-card-body p a:hover {
+  text-decoration: underline;
+}
+
+@media (width >= 600px) {
+  .cards-product > ul {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+  }
+}
+
+@media (width >= 900px) {
+  .cards-product > ul {
+    gap: 24px;
+  }
+
+  .cards-product .cards-product-card-body {
+    padding: 24px 20px;
+  }
+
+  .cards-product .cards-product-card-body h3 {
+    font-size: var(--heading-font-size-m);
+  }
+}

@@ -1,0 +1,108 @@
+/* Columns Promo - JP Life Article Promotion Section */
+
+.columns-promo > div {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.columns-promo > div > div {
+  order: unset;
+}
+
+/* Left column - Main featured article */
+.columns-promo > div > div:first-child {
+  background-color: var(--background-color);
+  border-radius: var(--border-radius-m);
+  overflow: hidden;
+  box-shadow: 0 2px 8px rgba(0 0 0 / 8%);
+}
+
+.columns-promo > div > div:first-child img {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
+  display: block;
+}
+
+.columns-promo > div > div:first-child h3 {
+  font-size: var(--heading-font-size-m);
+  font-weight: 700;
+  color: var(--text-color);
+  margin: 16px 20px 8px;
+}
+
+.columns-promo > div > div:first-child p {
+  font-size: var(--body-font-size-m);
+  color: var(--text-color-muted);
+  margin: 0 20px 16px;
+  line-height: 1.7;
+}
+
+.columns-promo > div > div:first-child p:last-child {
+  margin-bottom: 20px;
+}
+
+.columns-promo > div > div:first-child p a {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  color: var(--brand-blue);
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.columns-promo > div > div:first-child p a:hover {
+  text-decoration: underline;
+}
+
+/* Right column - Article list */
+.columns-promo > div > div:last-child h4 {
+  font-size: var(--heading-font-size-xs);
+  font-weight: 700;
+  margin: 0 0 12px;
+  padding-bottom: 8px;
+  border-bottom: 2px solid var(--brand-blue);
+}
+
+.columns-promo > div > div:last-child p {
+  margin: 0;
+  padding: 12px 0;
+  border-bottom: 1px solid #eee;
+  font-size: var(--body-font-size-m);
+  line-height: 1.6;
+}
+
+.columns-promo > div > div:last-child p a {
+  color: var(--text-color);
+  text-decoration: none;
+}
+
+.columns-promo > div > div:last-child p a:hover {
+  color: var(--brand-blue);
+  text-decoration: underline;
+}
+
+.columns-promo > div > .columns-promo-img-col {
+  order: unset;
+}
+
+.columns-promo > div > .columns-promo-img-col img {
+  display: block;
+}
+
+@media (width >= 900px) {
+  .columns-promo > div {
+    flex-direction: row;
+    align-items: flex-start;
+    gap: 32px;
+  }
+
+  .columns-promo > div > div {
+    flex: 1;
+  }
+
+  .columns-promo > div > div:first-child {
+    flex: 1.2;
+  }
+}

@@ -1,0 +1,38 @@
+{
+  "variantName": "cards-navigation",
+  "baseBlock": "cards",
+  "version": "1.0.0",
+  "created": "2026-03-23T08:10:00.000Z",
+  "sourceContext": {
+    "originUrl": "https://www.jp-life.japanpost.jp/",
+    "originPage": "Japan Post Life Insurance homepage",
+    "blockPosition": "top"
+  },
+  "visualCharacteristics": {
+    "colorScheme": "light",
+    "density": "compact",
+    "purpose": "customer-navigation",
+    "imagePattern": "icons"
+  },
+  "contentPattern": {
+    "structure": "icon + title + link list",
+    "buttonCount": 1,
+    "imageCount": 1
+  },
+  "reuseGuidance": {
+    "suitableFor": [
+      "customer type navigation cards",
+      "service category cards with icons",
+      "link-heavy navigation cards"
+    ],
+    "notSuitableFor": [
+      "article listings",
+      "product showcases with large images"
+    ]
+  },
+  "usage": {
+    "pagesUsing": ["content/index"],
+    "reuseCount": 1,
+    "lastUsed": "2026-03-23T08:10:00.000Z"
+  }
+}

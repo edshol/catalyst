@@ -1,0 +1,187 @@
+/* Carousel Logos - Adobe Business JP */
+/* Customer logo carousel with company logos and testimonials */
+
+.carousel-logos-container .carousel-logos-wrapper {
+  max-width: unset;
+  padding: 0;
+}
+
+.carousel-logos {
+  padding: 40px 24px;
+}
+
+.carousel-logos .carousel-logos-slides-container {
+  position: relative;
+  max-width: var(--container-max-width);
+  margin: 0 auto;
+}
+
+.carousel-logos .carousel-logos-slides,
+.carousel-logos .carousel-logos-slide-indicators {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.carousel-logos .carousel-logos-slides {
+  display: flex;
+  scroll-behavior: smooth;
+  scroll-snap-type: x mandatory;
+  overflow: scroll clip;
+  scrollbar-width: none;
+}
+
+.carousel-logos .carousel-logos-slides::-webkit-scrollbar {
+  display: none;
+}
+
+.carousel-logos .carousel-logos-slide {
+  flex: 0 0 100%;
+  scroll-snap-align: start;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  width: 100%;
+  min-height: 200px;
+  padding: 32px 16px;
+  box-sizing: border-box;
+  text-align: center;
+}
+
+/* Logo image */
+.carousel-logos .carousel-logos-slide .carousel-logos-slide-image {
+  position: relative;
+  margin-bottom: 16px;
+}
+
+.carousel-logos .carousel-logos-slide .carousel-logos-slide-image picture {
+  position: relative;
+  inset: auto;
+  display: flex;
+  justify-content: center;
+}
+
+.carousel-logos .carousel-logos-slide .carousel-logos-slide-image picture > img {
+  height: auto;
+  width: auto;
+  max-height: 60px;
+  max-width: 200px;
+  object-fit: contain;
+}
+
+/* Slide content (link) */
+.carousel-logos .carousel-logos-slide .carousel-logos-slide-content {
+  z-index: 1;
+  margin: 0;
+  padding: 0;
+  color: var(--text-color);
+  background-color: transparent;
+  position: relative;
+  width: auto;
+}
+
+.carousel-logos .carousel-logos-slide .carousel-logos-slide-content a {
+  color: var(--link-color);
+  font-size: var(--body-font-size-s);
+  font-weight: 500;
+}
+
+.carousel-logos .carousel-logos-slide .carousel-logos-slide-content a:hover {
+  color: var(--link-hover-color);
+  text-decoration: underline;
+}
+
+/* Slide indicators */
+.carousel-logos .carousel-logos-slide-indicators {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 6px 12px;
+  padding: 16px;
+  line-height: 0;
+  background-color: transparent;
+}
+
+.carousel-logos .carousel-logos-slide-indicator button {
+  width: 12px;
+  height: 12px;
+  margin: 0;
+  padding: 0;
+  border: 2px solid var(--border-color);
+  border-radius: 50%;
+  background-color: transparent;
+  transition: background-color 0.2s;
+}
+
+.carousel-logos .carousel-logos-slide-indicator button:disabled,
+.carousel-logos .carousel-logos-slide-indicator button:hover,
+.carousel-logos .carousel-logos-slide-indicator button:focus-visible {
+  background-color: var(--accent-primary);
+  border-color: var(--accent-primary);
+}
+
+/* Navigation buttons */
+.carousel-logos .carousel-logos-navigation-buttons {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  left: 0;
+  right: 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  z-index: 1;
+  pointer-events: none;
+}
+
+/* stylelint-disable-next-line no-descending-specificity */
+.carousel-logos .carousel-logos-navigation-buttons button {
+  position: relative;
+  width: 40px;
+  height: 40px;
+  margin: 0;
+  border-radius: 50%;
+  padding: 0;
+  background-color: rgb(255 255 255 / 90%);
+  border: 1px solid var(--border-color);
+  transition: background-color 0.2s;
+  pointer-events: auto;
+}
+
+.carousel-logos .carousel-logos-navigation-buttons button:hover,
+.carousel-logos .carousel-logos-navigation-buttons button:focus-visible {
+  background-color: #fff;
+  border-color: var(--accent-primary);
+}
+
+.carousel-logos .carousel-logos-navigation-buttons button::after {
+  display: block;
+  content: '';
+  border: 2px solid var(--text-color);
+  border-bottom: 0;
+  border-left: 0;
+  height: 10px;
+  width: 10px;
+  position: absolute;
+  top: 50%;
+  left: calc(50% + 2px);
+  transform: translate(-50%, -50%) rotate(-135deg);
+}
+
+.carousel-logos .carousel-logos-navigation-buttons button.slide-next::after {
+  transform: translate(-50%, -50%) rotate(45deg);
+  left: calc(50% - 2px);
+}
+
+@media (width >= 900px) {
+  .carousel-logos {
+    padding: 60px 40px;
+  }
+
+  .carousel-logos .carousel-logos-slide .carousel-logos-slide-image picture > img {
+    max-height: 80px;
+    max-width: 250px;
+  }
+}
