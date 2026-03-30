@@ -1,4 +1,4 @@
-/* Hero Block - rerdade futebolista
+/* Hero Block
  * Full-width hero with parallax background image
  */
 
@@ -63,25 +63,28 @@
   margin: 4px;
 }
 
-/* First button = warning/orange, subsequent buttons = success/green (default) */
+/* Primary CTA button */
 .hero .button-container a.button:any-link {
-  background-color: var(--accent-warning);
-  border-color: var(--accent-warning);
+  background-color: var(--brand-blue);
+  border-color: var(--brand-blue);
 }
 
 .hero .button-container a.button:hover {
-  background-color: var(--accent-warning-hover);
-  border-color: var(--accent-warning-hover);
+  background-color: var(--brand-blue-hover);
+  border-color: var(--brand-blue-hover);
 }
 
+/* Secondary CTA button (outline) */
 .hero .button-container ~ .button-container a.button:any-link {
-  background-color: var(--accent-success);
-  border-color: var(--accent-success);
+  background-color: transparent;
+  border: 2px solid #fff;
+  color: #fff;
 }
 
 .hero .button-container ~ .button-container a.button:hover {
-  background-color: var(--accent-success-hover);
-  border-color: var(--accent-success-hover);
+  background-color: #fff;
+  border-color: #fff;
+  color: var(--dark-color);
 }
 
 .hero a.button:any-link {
@@ -109,7 +112,8 @@
 .hero img {
   object-fit: cover;
   width: 100%;
-  height: 100%;
+  height: 130%;
+  min-height: 130%;
 }
 
 /* Hero text rotation animation */

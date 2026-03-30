@@ -1,5 +1,5 @@
 /* ===========================================
-   rerdade futebolista - Lazy-Loaded Styles
+   Lazy-Loaded Styles
    Loaded after LCP for non-critical visual enhancements
    =========================================== */
 
@@ -123,7 +123,7 @@ body.scroll-animations .cards.revealed > ul > li:nth-child(12) { animation-delay
   display: flex;
   align-items: center;
   justify-content: center;
-  background-color: var(--accent-primary);
+  background-color: var(--brand-blue);
   color: var(--text-color-inverted);
   border-radius: 50%;
   font-size: 20px;
@@ -144,7 +144,7 @@ body.scroll-animations .cards.revealed > ul > li:nth-child(12) { animation-delay
 }
 
 .back-to-top:hover {
-  background-color: var(--accent-primary-hover);
+  background-color: var(--brand-blue-hover);
   text-decoration: none;
   color: var(--text-color-inverted);
   transform: translateY(-2px);

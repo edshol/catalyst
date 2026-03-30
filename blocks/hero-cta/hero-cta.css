@@ -53,8 +53,8 @@
 
 /* CTA button */
 .hero-cta a.button {
-  background-color: var(--accent-primary);
-  border-color: var(--accent-primary);
+  background-color: var(--brand-blue);
+  border-color: var(--brand-blue);
   color: #fff;
   border-radius: var(--button-border-radius);
   padding: 12px 28px;
@@ -63,8 +63,8 @@
 }
 
 .hero-cta a.button:hover {
-  background-color: var(--accent-primary-hover);
-  border-color: var(--accent-primary-hover);
+  background-color: var(--brand-blue-hover);
+  border-color: var(--brand-blue-hover);
 }
 
 .hero-cta.no-image * {
