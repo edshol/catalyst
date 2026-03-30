@@ -1,4 +1,4 @@
-/* rerdade futebolista - Delayed Functionality
+/* Delayed Functionality
  * Loaded 3 seconds after page load for non-critical enhancements
  */
 

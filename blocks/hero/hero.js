@@ -1,9 +1,35 @@
 /**
- * Hero Block - rerdade futebolista
- * Text rotation effect (replaces Morphext/WOW.js flipInX animation)
+ * Hero Block
+ * Text rotation effect with parallax background scrolling
  * Cycles through text variants in the hero heading
  */
 export default function decorate(block) {
+  // Trigger staggered entrance animation
+  block.classList.add('hero-animated');
+
+  // Parallax background effect - image moves slower than scroll
+  const heroImg = block.querySelector(':scope > div:first-child img');
+  if (heroImg) {
+    heroImg.style.willChange = 'transform';
+    let ticking = false;
+    const onScroll = () => {
+      if (!ticking) {
+        window.requestAnimationFrame(() => {
+          const rect = block.getBoundingClientRect();
+          if (rect.bottom >= 0 && rect.top <= window.innerHeight) {
+            const scrolled = window.scrollY;
+            const rate = scrolled * 0.35;
+            heroImg.style.transform = `translateY(${rate}px)`;
+          }
+          ticking = false;
+        });
+        ticking = true;
+      }
+    };
+    window.addEventListener('scroll', onScroll, { passive: true });
+    onScroll();
+  }
+
   const heading = block.querySelector('h2');
   if (!heading) return;
 

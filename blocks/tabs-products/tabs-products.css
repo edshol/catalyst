@@ -47,7 +47,7 @@
 }
 
 .tabs-products .tabs-products-list button:hover {
-  color: var(--accent-primary);
+  color: var(--brand-blue);
   background-color: transparent;
   border-color: transparent;
 }

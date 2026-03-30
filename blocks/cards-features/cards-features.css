@@ -37,23 +37,27 @@
   font-size: var(--body-font-size-l);
   font-weight: 700;
   line-height: 1.6;
-  color: inherit;
+  color: var(--text-color);
 }
 
 @media (width >= 600px) {
   .cards-features > ul {
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(2, 1fr);
     gap: 24px;
   }
 }
 
 @media (width >= 900px) {
+  .cards-features > ul {
+    grid-template-columns: repeat(4, 1fr);
+  }
+
   .cards-features > ul > li img {
     width: 80px;
     height: 80px;
   }
 
   .cards-features .cards-features-card-body {
-    font-size: var(--heading-font-size-s);
+    font-size: var(--body-font-size-m);
   }
 }

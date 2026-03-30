@@ -118,8 +118,8 @@
 .carousel-logos .carousel-logos-slide-indicator button:disabled,
 .carousel-logos .carousel-logos-slide-indicator button:hover,
 .carousel-logos .carousel-logos-slide-indicator button:focus-visible {
-  background-color: var(--accent-primary);
-  border-color: var(--accent-primary);
+  background-color: var(--brand-blue);
+  border-color: var(--brand-blue);
 }
 
 /* Navigation buttons */
@@ -153,7 +153,7 @@
 .carousel-logos .carousel-logos-navigation-buttons button:hover,
 .carousel-logos .carousel-logos-navigation-buttons button:focus-visible {
   background-color: #fff;
-  border-color: var(--accent-primary);
+  border-color: var(--brand-blue);
 }
 
 .carousel-logos .carousel-logos-navigation-buttons button::after {
