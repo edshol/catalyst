@@ -4,6 +4,9 @@
  * Cycles through text variants in the hero heading
  */
 export default function decorate(block) {
+  // Trigger staggered entrance animation
+  block.classList.add('hero-animated');
+
   const heading = block.querySelector('h2');
   if (!heading) return;
 
