@@ -143,9 +143,19 @@
 }
 
 .hero-marquee.no-image {
-  background: linear-gradient(135deg, rgb(0 61 143 / 70%) 0%, rgb(0 61 143 / 40%) 40%, transparent 70%),
-    url('/content/loan2026spring/hero-housing-loan.png') center / cover no-repeat;
+  background: url('/content/loan2026spring/hero-housing-loan.png') center / cover no-repeat;
   background-color: #003d8f;
+}
+
+.hero-marquee.no-image > div:first-child::after {
+  display: none;
+}
+
+.hero-marquee.no-image h1,
+.hero-marquee.no-image h2,
+.hero-marquee.no-image h3,
+.hero-marquee.no-image p {
+  text-shadow: 0 1px 4px rgb(0 0 0 / 60%), 0 0 12px rgb(0 0 0 / 30%);
 }
 
 @media (width >= 900px) {
